@@ -1,5 +1,6 @@
 import 'package:catbreeds/src/config/di/injection_container.dart';
 import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
+import 'package:catbreeds/src/presentation/components/card/cb_card.dart';
 import 'package:catbreeds/src/presentation/pages/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,8 +20,22 @@ class HomePage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: const CBAppBar.main(textTitle: 'Home'),
-        body: BlocBuilder<HomeCubit, HomeState>(
-            builder: (context, _) => const Center(child: Text('data'),)),
+        body: SafeArea(
+          minimum: const EdgeInsets.symmetric(horizontal: 20),
+          child: BlocBuilder<HomeCubit, HomeState>(
+            buildWhen: (previous, current) => previous.breeds != current.breeds,
+            builder: (context, state) => ListView.builder(
+              itemCount: state.breeds.length,
+              itemBuilder: (BuildContext context, int index) => CBCard.breed(
+                title: state.breeds[index].name,
+                image: state.breeds[index].image,
+                origin: state.breeds[index].origin,
+                intelligence: state.breeds[index].intelligence,
+                onTap: () {  },
+              ),
+            )
+          ),
+        ),
       ),
     );
   }

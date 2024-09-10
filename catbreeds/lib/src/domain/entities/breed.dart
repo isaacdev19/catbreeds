@@ -8,6 +8,7 @@ class Breed extends Equatable {
     required this.description,
     required this.webUrl,
     required this.image,
+    required this.intelligence,
   });
 
   final String id;
@@ -16,6 +17,7 @@ class Breed extends Equatable {
   final String description;
   final String? webUrl;
   final String image;
+  final int intelligence;
 
   @override
   List<Object?> get props => [
@@ -25,5 +27,6 @@ class Breed extends Equatable {
     description,
     webUrl,
     image,
+    intelligence,
   ];
 }

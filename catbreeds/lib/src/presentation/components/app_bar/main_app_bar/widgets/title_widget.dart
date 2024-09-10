@@ -18,7 +18,21 @@ class _TitleWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            CBText.headlineSmall(textTitle),
+            Expanded(child: CBText.headlineSmall(textTitle)),
+            SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: const TextField(
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.search)
+                  ),
+                ),
+            ),
+            Image.asset(
+              'assets/images/logo.png',
+              height: 50,
+              width: 50,
+              fit: BoxFit.cover,
+            ),
           ],
         ),
         const _UnderlineDecoration(),

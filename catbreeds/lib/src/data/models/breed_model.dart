@@ -8,6 +8,7 @@ class BreedModel extends Breed {
     required super.description,
     required super.webUrl,
     required super.image,
+    required super.intelligence,
   });
 
   factory BreedModel.fromJson(Map<String, dynamic> json) {
@@ -19,6 +20,7 @@ class BreedModel extends Breed {
       description: json['description'],
       webUrl: json['wikipedia_url'],
       image: image != null ? image['url'] : '',
+      intelligence: json['intelligence'],
     );
   }
 }
