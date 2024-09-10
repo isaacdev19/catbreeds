@@ -7,6 +7,6 @@ Mobile application that provides detailed information about various cat breeds, 
 ## Leadership data
 * Isaac Zapata
 
-## Documentos principales
+## Main documents
 
 * Guide to local environment [Getting Started](GETTINGSTARTED.md).
