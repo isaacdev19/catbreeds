@@ -8,7 +8,7 @@ abstract class CBAppBar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     required String textTitle,
     bool hasChatButton,
-    void Function() onChatButtonPressed,
+    void Function(String) onSearchChange,
   }) = MainAppBar;
 
 

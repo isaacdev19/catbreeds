@@ -1,8 +1,6 @@
 import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
 import 'package:catbreeds/src/presentation/components/text/cb_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 part 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/widgets/title_widget.dart';
 part 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/widgets/underline_decoration.dart';
@@ -12,12 +10,12 @@ class MainAppBar extends CBAppBar {
     super.key,
     required this.textTitle,
     this.hasChatButton = true,
-    this.onChatButtonPressed,
+    this.onSearchChange,
   });
 
   final String textTitle;
   final bool hasChatButton;
-  final void Function()? onChatButtonPressed;
+  final void Function(String)? onSearchChange;
 
   @override
   Widget build(BuildContext context) => AppBar(
@@ -30,7 +28,7 @@ class MainAppBar extends CBAppBar {
     title: _TitleWidget(
       textTitle: textTitle,
       hasChatButton: hasChatButton,
-      onChatButtonPressed: onChatButtonPressed,
+      onSearchChange: onSearchChange,
     ),
   );
 }

@@ -19,4 +19,13 @@ class BreedsRepositoryImpl implements BreedsRepository {
       return const Left(Failure.serverFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, List<Breed>>> getCatBreedByString(String breed) async {
+    try {
+      return Right(await _remoteDataSource.getCatBreedByString(breed));
+    } catch(e) {
+    return const Left(Failure.serverFailure());
+    }
+  }
 }

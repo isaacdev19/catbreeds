@@ -18,13 +18,15 @@ class HomePage extends StatelessWidget {
         Future.microtask(() => cubit.getCatBreeds());
         return cubit;
       },
-      child: Scaffold(
-        appBar: const CBAppBar.main(textTitle: 'Home'),
-        body: SafeArea(
-          minimum: const EdgeInsets.symmetric(horizontal: 20),
-          child: BlocBuilder<HomeCubit, HomeState>(
-            buildWhen: (previous, current) => previous.breeds != current.breeds,
-            builder: (context, state) => ListView.builder(
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) => Scaffold(
+          appBar: CBAppBar.main(
+            textTitle: 'Home',
+            onSearchChange: (value) => context.read<HomeCubit>().searchBreed(value),
+          ),
+          body: SafeArea(
+            minimum: const EdgeInsets.symmetric(horizontal: 20),
+            child: ListView.builder(
               itemCount: state.breeds.length,
               itemBuilder: (BuildContext context, int index) => CBCard.breed(
                 title: state.breeds[index].name,
@@ -33,7 +35,7 @@ class HomePage extends StatelessWidget {
                 intelligence: state.breeds[index].intelligence,
                 onTap: () {  },
               ),
-            )
+            ),
           ),
         ),
       ),

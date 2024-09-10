@@ -4,12 +4,12 @@ class _TitleWidget extends StatelessWidget {
   const _TitleWidget({
     required this.textTitle,
     this.hasChatButton = true,
-    this.onChatButtonPressed,
+    this.onSearchChange,
   });
 
   final String textTitle;
   final bool hasChatButton;
-  final void Function()? onChatButtonPressed;
+  final void Function(String)? onSearchChange;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -21,8 +21,9 @@ class _TitleWidget extends StatelessWidget {
             Expanded(child: CBText.headlineSmall(textTitle)),
             SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
-                child: const TextField(
-                  decoration: InputDecoration(
+                child: TextField(
+                  onChanged: onSearchChange,
+                  decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.search)
                   ),
                 ),

@@ -6,6 +6,7 @@ import 'package:catbreeds/src/data/models/breed_model.dart';
 
 abstract interface class BreedsRemoteDataSource {
   Future<List<BreedModel>> getCatBreeds();
+  Future<List<BreedModel>> getCatBreedByString(String breed);
 }
 
 class BreedsRemoteDataSourceImpl implements BreedsRemoteDataSource {
@@ -20,6 +21,21 @@ class BreedsRemoteDataSourceImpl implements BreedsRemoteDataSource {
     try {
       final response = await _requestBuilder
           .path('breeds')
+          .method(MethodType.get);
+      final jsonResponse = json.decode(response);
+      final responseList = jsonResponse as List;
+      return responseList.map((e) => BreedModel.fromJson(e)).toList();
+    } catch(e) {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<BreedModel>> getCatBreedByString(String breed) async {
+    try {
+      final response = await _requestBuilder
+          .path('breeds/search')
+          .queryParameters({'q': breed})
           .method(MethodType.get);
       final jsonResponse = json.decode(response);
       final responseList = jsonResponse as List;
