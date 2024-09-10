@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:catbreeds/src/config/rest_consumer/method_type.dart';
 import 'package:catbreeds/src/config/rest_consumer/rest_consumer.dart';
 import 'package:catbreeds/src/data/models/breed_model.dart';
@@ -16,10 +18,11 @@ class BreedsRemoteDataSourceImpl implements BreedsRemoteDataSource {
   @override
   Future<List<BreedModel>> getCatBreeds() async {
     try {
-      final response = _requestBuilder
+      final response = await _requestBuilder
           .path('breeds')
           .method(MethodType.get);
-      final responseList = response as List;
+      final jsonResponse = json.decode(response);
+      final responseList = jsonResponse as List;
       return responseList.map((e) => BreedModel.fromJson(e)).toList();
     } catch(e) {
       throw Exception();

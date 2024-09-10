@@ -14,7 +14,7 @@ class Breed extends Equatable {
   final String name;
   final String origin;
   final String description;
-  final String webUrl;
+  final String? webUrl;
   final String image;
 
   @override

@@ -11,13 +11,14 @@ class BreedModel extends Breed {
   });
 
   factory BreedModel.fromJson(Map<String, dynamic> json) {
+    final image = json['image'];
     return BreedModel(
       id: json['id'],
       name: json['name'],
       origin: json['origin'],
       description: json['description'],
       webUrl: json['wikipedia_url'],
-      image: json['image']['url'],
+      image: image != null ? image['url'] : '',
     );
   }
 }
