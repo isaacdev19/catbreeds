@@ -1,0 +1,89 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: CI
+
+on:
+  pull_request:
+    branches: [ "main", "develop", "release" ]
+  push:
+    branches: [ "main", "develop", "release" ]
+
+jobs:
+  run_test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: catbreeds/
+
+      - name: Analyze project source
+        run: flutter analyze
+        working-directory: catbreeds/
+
+      - name: Run tests
+        run: flutter test
+        working-directory: catbreeds/
+
+  build_android:
+    name: Build Flutter(Android)
+    needs: [run_test]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: catbreeds/
+
+      - name: Clean project
+        run: flutter clean
+        working-directory: catbreeds/
+
+      - name: Run web
+        run: flutter build appbundle
+        working-directory: catbreeds/
+
+  build_ios:
+    name: Build Flutter(iOS)
+    needs: [run_test]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: catbreeds/
+
+      - name: Clean project
+        run: flutter clean
+        working-directory: catbreeds/
+
+      - name: Run web
+        run: flutter build ios --release --no-codesign
+        working-directory: catbreeds/
+
