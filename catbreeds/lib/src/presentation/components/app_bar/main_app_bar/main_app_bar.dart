@@ -19,8 +19,8 @@ class MainAppBar extends CBAppBar {
 
   @override
   Widget build(BuildContext context) => AppBar(
-    backgroundColor: Theme.of(context).colorScheme.background,
-    surfaceTintColor: Theme.of(context).colorScheme.background,
+    backgroundColor: Theme.of(context).colorScheme.secondary,
+    surfaceTintColor: Theme.of(context).colorScheme.secondary,
     titleSpacing: 0,
     leadingWidth: 0,
     centerTitle: false,

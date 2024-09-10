@@ -1,9 +1,7 @@
 import 'package:catbreeds/src/presentation/components/card/cb_card.dart';
 import 'package:catbreeds/src/presentation/components/text/cb_text.dart';
 import 'package:catbreeds/src/presentation/components/ui_constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BreedCard extends CBCard {
   const BreedCard({

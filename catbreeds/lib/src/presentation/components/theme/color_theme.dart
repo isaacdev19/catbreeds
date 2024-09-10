@@ -11,7 +11,7 @@ const cbColorScheme = ColorScheme(
   primaryContainer: colorMarca1Variante,
   onPrimaryContainer: Colors.white,
   // Secondary
-  secondary: colorMarca2,
+  secondary: secondary,
   onSecondary: colorNull,
   secondaryContainer: colorContinuar,
   onSecondaryContainer: colorNull,
@@ -25,14 +25,9 @@ const cbColorScheme = ColorScheme(
   onError: colorNull,
   errorContainer: colorNull,
   onErrorContainer: colorNull,
-  // Background
-  background: colorFondosDePantallas,
-  onBackground: colorNull,
   // Surface
   surface: primary,
   onSurface: colorTextoPrincipal,
-  surfaceVariant: colorNull,
-  onSurfaceVariant: colorNull,
   // Other
   outline: colorNull,
   shadow: colorNull,
@@ -51,7 +46,7 @@ const colorAlerta = Color(0xFFF7F777);
 const colorError = Color(0xFFDB1212);
 const colorContinuar = Color(0xFF00BFB3);
 const colorInputsInactivos = Color(0xFF979797);
-const colorFondosDePantallas = Color(0xFFF5F5F5);
+const secondary = Color(0xFFF5F5F5);
 const colorFondoCards = Color(0xFFFFFFFF);
 const colorFondoCardsSeleccionadas = Color(0xFFFAF2FF);
 const colorTextoPrincipal = Color(0xFF343434);

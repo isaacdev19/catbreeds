@@ -1,5 +1,5 @@
 import 'package:catbreeds/src/domain/entities/breed.dart';
-import 'package:catbreeds/src/domain/usecases/getCatBreedByStringUseCase.dart';
+import 'package:catbreeds/src/domain/usecases/get_cat_breed_by_string_use_case.dart';
 import 'package:catbreeds/src/domain/usecases/get_cat_breeds_use_case.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
