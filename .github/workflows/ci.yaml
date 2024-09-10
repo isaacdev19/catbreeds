@@ -38,7 +38,7 @@ jobs:
         working-directory: catbreeds/
 
   build_android:
-    name: Build Flutter(Web)
+    name: Build Flutter(Android)
     needs: [run_test]
     runs-on: macos-latest
     steps:
@@ -63,7 +63,7 @@ jobs:
         working-directory: catbreeds/
 
   build_ios:
-    name: Build Flutter(Web)
+    name: Build Flutter(iOS)
     needs: [run_test]
     runs-on: macos-latest
     steps:
