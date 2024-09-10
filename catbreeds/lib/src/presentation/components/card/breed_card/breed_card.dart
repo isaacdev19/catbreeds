@@ -23,33 +23,36 @@ class BreedCard extends CBCard {
   final int intelligence;
 
   @override
-  Widget build(BuildContext context) => Card(
-    margin: const EdgeInsets.all(10),
-    shadowColor: Theme.of(context).colorScheme.primary,
-    child: SafeArea(
-      minimum: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          CBText.titleMedium(title),
-          vSpace3,
-          ClipRRect(
-            borderRadius: borderRadius,
-            child: Image.network(
-              image,
-              fit: BoxFit.cover,
-              width: 250,
-              height: 250,
-              errorBuilder: (context, _, __) => const Icon(Icons.image),
+  Widget build(BuildContext context) => InkWell(
+    onTap: onTap,
+    child: Card(
+      margin: const EdgeInsets.all(10),
+      shadowColor: Theme.of(context).colorScheme.primary,
+      child: SafeArea(
+        minimum: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            CBText.labelLarge(title),
+            vSpace3,
+            ClipRRect(
+              borderRadius: borderRadius,
+              child: Image.network(
+                image,
+                fit: BoxFit.cover,
+                width: 250,
+                height: 250,
+                errorBuilder: (context, _, __) => const Icon(Icons.image),
+              ),
             ),
-          ),
-          vSpace3,
-          Row(
-            children: [
-              Expanded(child: CBText.bodySmall(origin)),
-              CBText.bodySmall('Intelligence: $intelligence')
-            ],
-          )
-        ],
+            vSpace3,
+            Row(
+              children: [
+                Expanded(child: CBText.bodySmall(origin)),
+                CBText.bodySmall('Intelligence: $intelligence')
+              ],
+            )
+          ],
+        ),
       ),
     ),
   );

@@ -1,15 +1,13 @@
-part of 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/main_app_bar.dart';
+part of 'package:catbreeds/src/presentation/components/app_bar/secondary_app_bar/secondary_app_bar.dart';
 
 class _TitleWidget extends StatelessWidget {
   const _TitleWidget({
     required this.textTitle,
     this.hasChatButton = true,
-    this.onSearchChange,
   });
 
   final String textTitle;
   final bool hasChatButton;
-  final void Function(String)? onSearchChange;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -18,16 +16,13 @@ class _TitleWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(child: CBText.headlineSmall(textTitle)),
-            SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: TextField(
-                  onChanged: onSearchChange,
-                  decoration: const InputDecoration(
-                    suffixIcon: Icon(Icons.search)
-                  ),
-                ),
+            InkWell(
+              onTap: () => context.pop(),
+              child: const Icon(Icons.arrow_back),
             ),
+            const Spacer(),
+            CBText.headlineSmall(textTitle),
+            const Spacer(),
             Image.asset(
               'assets/images/logo.png',
               height: 50,
@@ -36,7 +31,6 @@ class _TitleWidget extends StatelessWidget {
             ),
           ],
         ),
-        const UnderlineDecoration(),
       ],
     ),
   );

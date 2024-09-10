@@ -12,7 +12,7 @@
         </shape>
     </item>
     <item android:bottom="40dp">
-        <bitmap android:gravity="bottom|center" android:src="@mipmap/title"/>
+        <bitmap android:gravity="bottom|center" android:src="@mipmap/ic_launcher"/>
     </item>
 
 </layer-list>

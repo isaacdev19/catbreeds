@@ -1,7 +1,7 @@
-part of 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/main_app_bar.dart';
+import 'package:flutter/material.dart';
 
-class _UnderlineDecoration extends StatelessWidget {
-  const _UnderlineDecoration();
+class UnderlineDecoration extends StatelessWidget {
+  const UnderlineDecoration({super.key});
 
   @override
   Widget build(BuildContext context) => Align(

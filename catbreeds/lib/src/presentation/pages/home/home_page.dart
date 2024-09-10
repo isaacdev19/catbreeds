@@ -1,9 +1,12 @@
 import 'package:catbreeds/src/config/di/injection_container.dart';
 import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
 import 'package:catbreeds/src/presentation/components/card/cb_card.dart';
+import 'package:catbreeds/src/presentation/pages/detail_breed/detail_breed_page.dart';
 import 'package:catbreeds/src/presentation/pages/home/cubit/home_cubit.dart';
+import 'package:catbreeds/src/presentation/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,7 +36,9 @@ class HomePage extends StatelessWidget {
                 image: state.breeds[index].image,
                 origin: state.breeds[index].origin,
                 intelligence: state.breeds[index].intelligence,
-                onTap: () {  },
+                onTap: () {
+                  context.pushNamed(DetailBreedPage.routeName, extra: state.breeds[index]);
+                },
               ),
             ),
           ),

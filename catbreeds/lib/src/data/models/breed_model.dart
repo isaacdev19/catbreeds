@@ -9,6 +9,11 @@ class BreedModel extends Breed {
     required super.webUrl,
     required super.image,
     required super.intelligence,
+    required super.childFriendly,
+    required super.affectionLevel,
+    required super.adaptability,
+    required super.temperament,
+    required super.lifeSpan,
   });
 
   factory BreedModel.fromJson(Map<String, dynamic> json) {
@@ -21,6 +26,11 @@ class BreedModel extends Breed {
       webUrl: json['wikipedia_url'],
       image: image != null ? image['url'] : '',
       intelligence: json['intelligence'],
+      childFriendly: json['child_friendly'],
+      affectionLevel: json['affection_level'],
+      adaptability: json['adaptability'],
+      temperament: json['temperament'],
+      lifeSpan: json['life_span'],
     );
   }
 }
