@@ -19,7 +19,7 @@ class MainAppBar extends CBAppBar {
 
   @override
   Widget build(BuildContext context) => AppBar(
-    backgroundColor: Theme.of(context).colorScheme.background,
+    backgroundColor: Theme.of(context).colorScheme.primary,
     titleSpacing: 0,
     leadingWidth: 0,
     centerTitle: false,
