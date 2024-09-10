@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 final ThemeData cbLightAppTheme = ThemeData(
   colorScheme: cbColorScheme,
-  scaffoldBackgroundColor: cbColorScheme.background,
+  scaffoldBackgroundColor: cbColorScheme.surface,
 
   /// Sub-Themes
   textTheme: cbTextTheme,

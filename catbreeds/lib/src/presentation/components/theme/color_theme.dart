@@ -26,7 +26,7 @@ const cbColorScheme = ColorScheme(
   errorContainer: colorNull,
   onErrorContainer: colorNull,
   // Surface
-  surface: primary,
+  surface: secondary,
   onSurface: colorTextoPrincipal,
   // Other
   outline: colorNull,
