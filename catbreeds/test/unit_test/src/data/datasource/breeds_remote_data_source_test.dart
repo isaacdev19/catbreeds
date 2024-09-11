@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:catbreeds/src/config/rest_consumer/method_type.dart';
 import 'package:catbreeds/src/config/rest_consumer/rest_consumer.dart';
 import 'package:catbreeds/src/data/datasource/breeds_remote_data_source.dart';

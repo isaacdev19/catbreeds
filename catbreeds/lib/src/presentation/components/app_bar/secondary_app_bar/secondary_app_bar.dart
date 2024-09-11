@@ -1,7 +1,5 @@
 import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
-import 'package:catbreeds/src/presentation/components/core/underline_decoration.dart';
 import 'package:catbreeds/src/presentation/components/text/cb_text.dart';
-import 'package:catbreeds/src/presentation/router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

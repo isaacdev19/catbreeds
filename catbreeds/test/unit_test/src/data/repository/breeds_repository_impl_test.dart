@@ -2,7 +2,6 @@ import 'package:catbreeds/src/config/failure.dart';
 import 'package:catbreeds/src/data/datasource/breeds_remote_data_source.dart';
 import 'package:catbreeds/src/data/models/breed_model.dart';
 import 'package:catbreeds/src/data/repository/breeds_repository_impl.dart';
-import 'package:catbreeds/src/domain/entities/breed.dart';
 import 'package:catbreeds/src/domain/repository/breeds_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
