@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:catbreeds/src/domain/entities/breed.dart';
-import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
 import 'package:catbreeds/src/presentation/pages/detail_breed/detail_breed_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
