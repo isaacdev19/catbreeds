@@ -37,6 +37,7 @@ class BreedCard extends CBCard {
             ClipRRect(
               borderRadius: borderRadius,
               child: Image.network(
+                key: const Key('CardImage'),
                 image,
                 fit: BoxFit.cover,
                 width: 250,

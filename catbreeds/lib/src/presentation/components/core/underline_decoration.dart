@@ -7,6 +7,7 @@ class UnderlineDecoration extends StatelessWidget {
   Widget build(BuildContext context) => Align(
     alignment: Alignment.topLeft,
     child: Container(
+      key: const Key('UnderLine'),
       width: 25,
       height: 3,
       color: Colors.black,
