@@ -21,9 +21,9 @@ class BreedsRepositoryImpl implements BreedsRepository {
   }
 
   @override
-  Future<Either<Failure, List<Breed>>> getCatBreedByString(String breed) async {
+  Future<Either<Failure, List<Breed>>> searchBreed(String breed) async {
     try {
-      return Right(await _remoteDataSource.getCatBreedByString(breed));
+      return Right(await _remoteDataSource.searchBreed(breed));
     } catch(e) {
     return const Left(Failure.serverFailure());
     }

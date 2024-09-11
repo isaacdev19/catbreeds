@@ -70,7 +70,6 @@ class RequestBuilderImpl implements RequestBuilder {
 
   ApiRequest _createRequest() => ApiRequest(
     path: query.path ?? '',
-    body: query.body,
     queryParameters: query.queryParameters,
     headers: query.headers ?? contentHeader,
   );
