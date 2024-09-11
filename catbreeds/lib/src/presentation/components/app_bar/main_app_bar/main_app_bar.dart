@@ -1,9 +1,9 @@
 import 'package:catbreeds/src/presentation/components/app_bar/cb_app_bar.dart';
+import 'package:catbreeds/src/presentation/components/core/underline_decoration.dart';
 import 'package:catbreeds/src/presentation/components/text/cb_text.dart';
 import 'package:flutter/material.dart';
 
 part 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/widgets/title_widget.dart';
-part 'package:catbreeds/src/presentation/components/app_bar/main_app_bar/widgets/underline_decoration.dart';
 
 class MainAppBar extends CBAppBar {
   const MainAppBar({

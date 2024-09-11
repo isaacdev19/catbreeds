@@ -1,5 +1,5 @@
 import 'package:catbreeds/src/domain/entities/breed.dart';
-import 'package:catbreeds/src/domain/usecases/get_cat_breed_by_string_use_case.dart';
+import 'package:catbreeds/src/domain/usecases/search_breed_use_case.dart';
 import 'package:catbreeds/src/domain/usecases/get_cat_breeds_use_case.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
@@ -11,13 +11,13 @@ part 'home_status.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit({
     required GetCatBreedsUseCase getCatBreedsUseCase,
-    required GetCatBreedByStringUseCase getCatBreedByStringUseCase,
+    required SearchBreedUseCase getCatBreedByStringUseCase,
   }) : _getCatBreedsUseCase = getCatBreedsUseCase,
         _getCatBreedByStringUseCase = getCatBreedByStringUseCase,
         super(HomeState.initialState());
 
   final GetCatBreedsUseCase _getCatBreedsUseCase;
-  final GetCatBreedByStringUseCase _getCatBreedByStringUseCase;
+  final SearchBreedUseCase _getCatBreedByStringUseCase;
 
   Future<void> getCatBreeds() async {
     emit(state.copyWith(

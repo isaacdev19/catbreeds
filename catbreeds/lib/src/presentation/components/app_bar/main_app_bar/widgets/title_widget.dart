@@ -36,7 +36,7 @@ class _TitleWidget extends StatelessWidget {
             ),
           ],
         ),
-        const _UnderlineDecoration(),
+        const UnderlineDecoration(),
       ],
     ),
   );
