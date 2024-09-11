@@ -23,8 +23,6 @@ class HomePage extends StatelessWidget {
       child: BlocBuilder<HomeCubit, HomeState>(
         buildWhen: (previous, current) => previous.breeds !=  current.breeds || current.status == HomeStatus.loading,
         builder: (context, state) {
-          if(state.status == HomeStatus.loading) return const Center(child: CircularProgressIndicator(),);
-
           return Scaffold(
             appBar: CBAppBar.main(
               textTitle: 'Home',
